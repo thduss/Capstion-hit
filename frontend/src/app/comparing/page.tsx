@@ -1,6 +1,6 @@
+'use client'
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState, useCallback, Suspense } from "react";
-'use client'
 
 function ComparingPage() {
   const [status, setStatus] = useState('processing');
