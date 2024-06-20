@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  /* --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.table-wrapper {
+  display: inline-block; /* 내부 테이블 크기에 맞춤 */
+  border: 1px solid #D1D5DB; /* border 표시 */
+  border-radius: 12px; /* radius 적용 */
+  overflow: hidden; /* 넘치는 건 감춤 */
+  padding: 0rem; /* 내부 여백 추가 */
+}
+
+.table-wrapper table {
+  border-collapse: separate; /* separate 사용 */
+  border-spacing: 0; /* 셀 간격 제거 */
+  width: 100%;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  border: 1px solid #D1D5DB; /* 테이블 셀의 테두리 색상 통일 */
+}
