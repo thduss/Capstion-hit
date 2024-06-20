@@ -14,8 +14,6 @@ RUN npm run build
 FROM python:3.9 AS backend-builder
 WORKDIR /app/backend
 
-# ENV OPENAI_API_KEY=${GPT_API_KEY}
-
 # requirements.txt를 별도로 복사하여 캐시를 최적화
 COPY backend/requirements.txt .
 RUN pip install -r requirements.txt
@@ -44,12 +42,12 @@ COPY --from=frontend-builder /app/frontend/package-lock.json /app/frontend/packa
 WORKDIR /app/frontend
 RUN npm ci --production
 
-# 작업 디렉토리를 backend로 설정
-WORKDIR /app/backend
+# 작업 디렉토리를 frontend로 설정
+WORKDIR /app/frontend
 
 # 서비스 포트 노출
 EXPOSE 8000
 EXPOSE 3000
 
 # FastAPI와 Next.js를 실행하는 명령어
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port 8000 & cd /app/frontend && npm run start"]
+CMD ["sh", "-c", "npm run dev & cd /app/backend && uvicorn main:app --host 0.0.0.0 --port 8000"]
