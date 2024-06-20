@@ -45,6 +45,9 @@ RUN npm ci --production
 # 작업 디렉토리를 frontend로 설정
 WORKDIR /app/frontend
 
+# next.js를 전역으로 설치
+RUN npm install -g next
+
 # 서비스 포트 노출
 EXPOSE 8000
 EXPOSE 3000
