@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+requests
+openpyxl
+pandas
+kss
+scikit-learn
+sentence-transformers
+openai
+selenium
+webdriver-manager
+beautifulsoup4
+requests
+langdetect

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend-builder
+    working_dir: /app/backend
+    volumes:
+      - ./backend:/app/backend
+      - ./model:/app/model
+    env_file:
+      - .env
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend-builder
+    working_dir: /app/frontend
+    volumes:
+      - ./frontend:/app/frontend
+    command: npm run dev
+    ports:
+      - "3000:3000"
