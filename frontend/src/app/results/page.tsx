@@ -48,6 +48,11 @@ function ResultsPage() {
     }
   }, [queueId]);
 
+  useEffect(() => {
+    // Log items whenever they change
+    console.log('Items:', items);
+  }, [items]);
+
   return (
     <div className='bg-#FEEFC5'>
       <Product ProductA={productA} ProductB={productB} Result={items} />
