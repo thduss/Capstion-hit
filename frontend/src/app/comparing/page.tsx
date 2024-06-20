@@ -1,6 +1,6 @@
-'use client'
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState, useCallback, Suspense } from "react";
+'use client'
 
 function ComparingPage() {
   const [status, setStatus] = useState('processing');
@@ -16,7 +16,7 @@ function ComparingPage() {
 
     const poll = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/results/${queueId}`);
+        const response = await fetch(`http://34.64.246.251:8000/api/results/${queueId}`);
         console.log("Response Status:", response.status); // 응답 상태 로깅
 
         if (response.status === 500) {
