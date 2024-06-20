@@ -14,6 +14,8 @@ RUN npm run build
 FROM python:3.9 AS backend-builder
 WORKDIR /app/backend
 
+ENV OPENAI_API_KEY=${GPT_API_KEY}
+
 # requirements.txt를 별도로 복사하여 캐시를 최적화
 COPY backend/requirements.txt .
 RUN pip install -r requirements.txt
