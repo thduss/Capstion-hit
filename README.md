@@ -4,7 +4,7 @@
 
 ## 팀원 소개
 
-| <img src="" width = 120> | <img src="" width=120> |
+| <img src="https://avatars.githubusercontent.com/u/122020140?v=4" width = 120> | <img src="https://avatars.githubusercontent.com/u/109056397?v=4" width=120> |
 | --- | --- | 
 | 진현 (컴퓨터공학부) <br>[@jhyun13](https://github.com/jhyun13) | 김소연 (컴퓨터공학부) <br>[@thduss](https://github.com/thduss) | 
 
